@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 const Booking = () => {
-    const { tourkey } = useParams();
+    const { _id } = useParams();
+    console.log(_id)
     const [tour, setTour] = useState({});
 
     useEffect(() => {
-        fetch('tours.json')
+        fetch(`http://localhost:5000/places/${_id}`)
             .then(res => res.json())
             .then(data => setTour(data));
     }, [])
 
     return (
         <div>
-            <h2>{tour.name}</h2>
+            <h2>booking id: {_id}</h2>
         </div>
     );
 };

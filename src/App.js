@@ -3,6 +3,7 @@ import './App.css';
 import About from './Pages/About/About';
 import Booking from './Pages/Booking/Booking';
 import Home from './Pages/Home/Home/Home';
+import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import Tours from './Pages/Tours/Tours/Tours';
@@ -22,11 +23,14 @@ function App() {
           <Route exact path="/tours">
             <Tours></Tours>
           </Route>
-          <Route exact path="/booking/:tourkey">
+          <Route exact path="/booking/:id">
             <Booking></Booking>
           </Route>
           <Route exact path="/about">
             <About></About>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>

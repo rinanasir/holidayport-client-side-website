@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import './OurOffer.css';
 
 const OurOffer = ({ ourOffer }) => {
-    const { key, name, price, about, image } = ourOffer;
+    const { _id, name, price, about, image } = ourOffer;
 
     const dollarIcon = <FontAwesomeIcon icon={faDollarSign}></FontAwesomeIcon>
     return (
@@ -20,7 +20,7 @@ const OurOffer = ({ ourOffer }) => {
                         <h3 className="text-warning fs-4 fw-bold">{name}</h3>
                         <p>{about}</p>
                         <h5 className="text-danger fw-bold">Price: {dollarIcon} {price}</h5>
-                        <Link to={`/booking/${key}`}>
+                        <Link to={`/booking/${_id}`}>
                             <Button variant="warning" className="fw-bold">Book Now</Button>
                         </Link>
                     </div>

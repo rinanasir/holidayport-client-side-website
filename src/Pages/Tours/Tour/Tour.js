@@ -5,7 +5,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Tour = ({ tour }) => {
-    const { key, name, price, about, image } = tour;
+    const { _id, name, price, about, image } = tour;
+    // console.log(_id);
 
     const dollarIcon = <FontAwesomeIcon icon={faDollarSign}></FontAwesomeIcon>
     return (
@@ -19,7 +20,7 @@ const Tour = ({ tour }) => {
                         <h3 className="text-warning fs-4 fw-bold">{name}</h3>
                         <p>{about}</p>
                         <h5 className="text-danger fw-bold">Price: {dollarIcon} {price}</h5>
-                        <Link to={`/booking/${key}`}>
+                        <Link to={`/booking/${_id}`}>
                             <Button variant="warning" className="fw-bold">Book Now</Button>
                         </Link>
                     </div>
