@@ -2,10 +2,11 @@ import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './OurOffer.css';
 
 const OurOffer = ({ ourOffer }) => {
-    const { name, price, about, image } = ourOffer;
+    const { key, name, price, about, image } = ourOffer;
 
     const dollarIcon = <FontAwesomeIcon icon={faDollarSign}></FontAwesomeIcon>
     return (
@@ -19,7 +20,9 @@ const OurOffer = ({ ourOffer }) => {
                         <h3 className="text-warning fs-4 fw-bold">{name}</h3>
                         <p>{about}</p>
                         <h5 className="text-danger fw-bold">Price: {dollarIcon} {price}</h5>
-                        <Button variant="warning" className="fw-bold">Book Now</Button>
+                        <Link to={`/booking/${key}`}>
+                            <Button variant="warning" className="fw-bold">Book Now</Button>
+                        </Link>
                     </div>
                 </div>
             </div>
