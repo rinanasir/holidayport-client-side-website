@@ -1,5 +1,4 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
 import banner1 from '../../../images/banner1.png';
 
 const Banner = () => {

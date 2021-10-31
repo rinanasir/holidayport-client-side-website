@@ -1,21 +1,25 @@
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import './OurOffer.css';
 
 const OurOffer = ({ ourOffer }) => {
-    console.log(ourOffer)
     const { name, price, about, image } = ourOffer;
+
+    const dollarIcon = <FontAwesomeIcon icon={faDollarSign}></FontAwesomeIcon>
     return (
         <div className="col-lg-12">
-            <div className="d-flex justify-content-evenl align-items-center border border-2 rounded-2 border-warning my-3">
+            <div className="d-flex justify-content-evenl align-items-center border border-2 rounded-2 border-secondary my-3">
                 <div className="image-style">
                     <img className="img-fluid rounded" src={image} alt="" />
                 </div>
                 <div>
                     <div className="text-start mx-5">
-                        <h3>{name}</h3>
-                        <h5>Price: {price}</h5>
+                        <h3 className="text-warning fs-4 fw-bold">{name}</h3>
                         <p>{about}</p>
-                        <button>Book Now</button>
+                        <h5 className="text-danger fw-bold">Price: {dollarIcon} {price}</h5>
+                        <Button variant="warning">Book Now</Button>
                     </div>
                 </div>
             </div>

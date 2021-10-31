@@ -11,7 +11,7 @@ const OurOffers = () => {
     }, [])
     return (
         <div id="our-offers" className="mx-5 px-3">
-            <h2 className="my-5">Recommended Tours</h2>
+            <h1 className="mt-5 text-warning fs-2 fw-bold">Recommended Tours</h1>
             <div className="row mx-5 px-5 my-5">
                 {
                     ourOffers.map(ourOffer => <OurOffer
