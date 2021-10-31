@@ -18,7 +18,7 @@ const NextTrip = () => {
                         />
                         <Carousel.Caption>
                             <div className="bg-warning text-dark rounded-2 fw-bolder py-1">
-                                <h3>Vatican City</h3>
+                                <h3 className="fw-bolder">Vatican City</h3>
                                 <p>World famous ancient city, carries thousands years of history</p>
                             </div>
                         </Carousel.Caption>
@@ -32,7 +32,7 @@ const NextTrip = () => {
 
                         <Carousel.Caption>
                             <div className="bg-warning text-dark rounded-2 fw-bolder py-1">
-                                <h3>Hot Air Ballon Ride</h3>
+                                <h3 className="fw-bolder">Hot Air Ballon Ride</h3>
                                 <p>Don't miss the chance to have a bird eye veiw</p>
                             </div>
                         </Carousel.Caption>
@@ -46,7 +46,7 @@ const NextTrip = () => {
 
                         <Carousel.Caption>
                             <div className="bg-warning text-dark rounded-2 fw-bolder py-1">
-                                <h3>Best coffee cities in US</h3>
+                                <h3 className="fw-bolder">Best coffee cities in US</h3>
                                 <p>If you love caffeine, this places is must for you</p>
                             </div>
                         </Carousel.Caption>
