@@ -12,9 +12,9 @@ const Header = () => {
                     <Navbar.Brand href="#home" className="fs-2 text-warning">{travelIcon} Holidayport</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link href="#home" className="text-warning fs-4">Home</Nav.Link>
-                        <Nav.Link href="#features" className="text-warning fs-4">Tours</Nav.Link>
-                        <Nav.Link href="#pricing" className="text-warning fs-4">About</Nav.Link>
+                        <Nav.Link href="/home" className="text-warning fs-4">Home</Nav.Link>
+                        <Nav.Link href="/tours" className="text-warning fs-4">Tours</Nav.Link>
+                        <Nav.Link href="/about" className="text-warning fs-4">About</Nav.Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
