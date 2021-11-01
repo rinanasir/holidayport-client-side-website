@@ -26,6 +26,8 @@ const Header = () => {
                         {user?.email ?
                             <>
                                 <Nav.Link as={Link} to="/myorders" className="text-warning fs-4">MyOrders</Nav.Link>
+                                <Nav.Link as={Link} to="/addtour" className="text-warning fs-4">AddTour</Nav.Link>
+                                <Nav.Link as={Link} to="/managetour" className="text-warning fs-4">ManageTour</Nav.Link>
                                 <Button onClick={logOut} className="text-warning fs-4" variant="link">{signOutIcon}</Button>
                             </> :
                             <Nav.Link as={Link} to="/login" className="text-warning fs-4">Login</Nav.Link>
