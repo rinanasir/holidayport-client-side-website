@@ -1,5 +1,6 @@
 import useCart from '../../hooks/useCart';
 import useTours from '../../hooks/useTours';
+import { deleteFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItems from './ReviewItems';
 
@@ -8,7 +9,10 @@ const MyOrders = () => {
     const [cart, setCart] = useCart(tours);
 
     const handleRemove = _id => {
-        console.log(_id);
+        // console.log(_id);
+        const newCart = cart.filter(tour => tour._id !== _id);
+        setCart(newCart);
+        deleteFromDb(_id);
     }
 
     return (
