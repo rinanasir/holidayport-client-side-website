@@ -6,10 +6,12 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import './Booking.css';
 import Cart from '../Cart/Cart';
+import { addToDb, getStoredCart } from '../../utilities/fakedb';
 
 const Booking = () => {
     const { id } = useParams();
     // console.log(id)
+    const [tours, setTours] = useState([]);
     const [tour, setTour] = useState({});
     const [cart, setCart] = useState([]);
 
@@ -22,9 +24,30 @@ const Booking = () => {
             .then(data => setTour(data));
     }, []);
 
+    useEffect(() => {
+        fetch("http://localhost:5000/places")
+            .then(res => res.json())
+            .then(data => setTours(data));
+    }, []);
+
+    useEffect(() => {
+        if (tours.length) {
+            const savedCart = getStoredCart();
+            const storedCart = [];
+            for (const key in savedCart) {
+                // console.log(tour);
+                const addedTour = tours.find(singleTour => singleTour._id === key);
+                // console.log(key, addedTour);
+                storedCart.push(addedTour);
+            }
+            setCart(storedCart);
+        }
+    }, [tours]);
+
     const handleAddToCart = (tour) => {
         const newCart = [...cart, tour];
         setCart(newCart);
+        addToDb(tour._id);
     };
 
     return (

@@ -28,7 +28,7 @@ const Cart = (props) => {
                 <p>Total Price</p>
                 <p> $ {total}</p>
                 <Link to="/myorders">
-                    <Button variant="warning" className="fw-bold">{confirmIcon} Review Order</Button>
+                    <Button variant="warning" className="fw-bold">{confirmIcon}Review</Button>
                 </Link>
             </div>
         </div>
