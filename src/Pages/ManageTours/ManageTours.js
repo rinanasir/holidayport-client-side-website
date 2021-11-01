@@ -4,13 +4,13 @@ const ManageTours = () => {
     const [tours, setTours] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/places')
+        fetch('https://protected-ocean-59347.herokuapp.com/places')
             .then(res => res.json())
             .then(data => setTours(data));
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/places/${id}`;
+        const url = `https://protected-ocean-59347.herokuapp.com/places/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

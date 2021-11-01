@@ -7,7 +7,7 @@ const AddTour = () => {
 
     const onSubmit = data => {
         // console.log(data);
-        axios.post('http://localhost:5000/places', data)
+        axios.post('https://protected-ocean-59347.herokuapp.com/places', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');

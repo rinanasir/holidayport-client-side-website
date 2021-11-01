@@ -18,13 +18,13 @@ const Booking = () => {
     const cartIcon = <FontAwesomeIcon icon={faCartPlus} />
 
     useEffect(() => {
-        fetch(`http://localhost:5000/places/${id}`)
+        fetch(`https://protected-ocean-59347.herokuapp.com/places/${id}`)
             .then(res => res.json())
             .then(data => setTour(data));
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:5000/places")
+        fetch("https://protected-ocean-59347.herokuapp.com/places")
             .then(res => res.json())
             .then(data => setTours(data));
     }, []);
