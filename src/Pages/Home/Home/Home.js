@@ -6,7 +6,7 @@ import Subscribe from '../Subscribe/Subscribe';
 
 const Home = () => {
     return (
-        <div>
+        <div id="home">
             <Banner></Banner>
             <OurOffers></OurOffers>
             <NextTrip></NextTrip>
