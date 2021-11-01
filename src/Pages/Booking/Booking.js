@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import './Booking.css';
 import Cart from '../Cart/Cart';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
@@ -35,10 +34,12 @@ const Booking = () => {
             const savedCart = getStoredCart();
             const storedCart = [];
             for (const key in savedCart) {
-                // console.log(tour);
                 const addedTour = tours.find(singleTour => singleTour._id === key);
-                // console.log(key, addedTour);
-                storedCart.push(addedTour);
+                if (addedTour) {
+                    const quantity = savedCart[key];
+                    addedTour.quantity = quantity;
+                    storedCart.push(addedTour);
+                }
             }
             setCart(storedCart);
         }
@@ -64,9 +65,6 @@ const Booking = () => {
                             <p>{tour.about}</p>
                             <h5 className="text-danger fw-bold">Price: {dollarIcon} {tour.price}</h5>
                             <Button variant="warning" className="fw-bold" onClick={() => handleAddToCart(tour)}>{cartIcon} Add to cart</Button>
-                            {/* <Link to="/myorders">
-                            <Button variant="warning" className="fw-bold" onClick={handleAddToCart}>Add to cart</Button>
-                        </Link> */}
                         </div>
                     </div>
                 </div>

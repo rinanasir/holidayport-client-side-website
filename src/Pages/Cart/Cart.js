@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
     const { cart } = props;
-
+    // console.log(cart);
     const confirmIcon = <FontAwesomeIcon icon={faCheckCircle} />
 
     let totalQuantity = 0;
